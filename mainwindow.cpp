@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    Menu *menu = new Menu(this);
+    ui->horizontalLayout->addWidget(menu);
 }
 
 MainWindow::~MainWindow()
