@@ -23,7 +23,8 @@ SOURCES += main.cpp \
     quazip/quacrc32.cpp \
     quazip/quaadler32.cpp \
     quazip/qioapi.cpp \
-    quazip/JlCompress.cpp
+    quazip/JlCompress.cpp \
+    easyfile.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -41,7 +42,8 @@ HEADERS += \
     quazip/quaadler32.h \
     quazip/JlCompress.h \
     quazip/ioapi.h \
-    quazip/crypt.h
+    quazip/crypt.h \
+    easyfile.h
 
 FORMS += \
     mainwindow.ui \

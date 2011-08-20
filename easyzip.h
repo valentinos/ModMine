@@ -11,7 +11,6 @@ public:
     EasyZip();
     static bool Zip(QString fileToZip, QString zipFileName);
     static bool Unzip(QString fileToUnzip, QString unzipFileName);
-    static bool RemoveDirectory(QString dirPath);
 };
 
 #endif // EASYZIP_H
