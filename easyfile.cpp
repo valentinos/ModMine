@@ -31,3 +31,19 @@ bool EasyFile::RemoveDirectory(QString dirPath)
     }
     return success;
 }
+
+QString EasyFile::GetMinecraftDirectory()
+{
+    #ifdef Q_WS_X11
+        return QString(QDir::homePath());
+    #endif
+    #ifdef Q_WS_MAC
+        return QString(QDir::homePath()+"/Library/Application Support/");
+    #endif
+    #ifdef Q_WS_WIN
+        if(!QSettings("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders").contains("AppData"))
+            return QString("");
+        return QString(QSettings("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders").value("AppData").toString()+"\\Roaming\\")
+    #endif
+    return QString("");
+}
