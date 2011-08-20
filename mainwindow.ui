@@ -18,9 +18,33 @@
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QListWidget" name="listWidget">
+       <property name="flow">
+        <enum>QListView::TopToBottom</enum>
+       </property>
+       <property name="selectionRectVisible">
+        <bool>true</bool>
+       </property>
+       <property name="currentRow">
+        <number>0</number>
+       </property>
        <item>
         <property name="text">
          <string>Menu</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sauvegardes</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Minecraft</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>A propos</string>
         </property>
        </item>
       </widget>
