@@ -4,6 +4,7 @@
 #include <QtGui/QLabel>
 #include "menu.h"
 #include "about.h"
+#include "restore.h"
 
 namespace Ui {
     class MainWindow;

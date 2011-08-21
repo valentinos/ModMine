@@ -19,6 +19,7 @@ signals :
     void ChangeRow(int i);
 
 private slots:
+    void on_RestoreButton_clicked();
     void on_AboutButton_clicked();
 
 private:

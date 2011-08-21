@@ -38,6 +38,9 @@ void MainWindow::on_listWidget_currentRowChanged(int i)
     QWidget *widgetToAdd;
     switch(i)
     {
+        case 1:
+            widgetToAdd = new Restore();
+            break;
         case 3:
             widgetToAdd = new About();
             break;

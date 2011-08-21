@@ -13,6 +13,11 @@ Menu::~Menu()
     delete ui;
 }
 
+void Menu::on_RestoreButton_clicked()
+{
+    emit ChangeRow(1);
+}
+
 void Menu::on_AboutButton_clicked()
 {
     emit ChangeRow(3);
