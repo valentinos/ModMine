@@ -71,4 +71,8 @@
  </widget>
  <resources/>
  <connections/>
+ <slots>
+  <signal>ChangeRow(int)</signal>
+  <slot>SetCurrentRow(int)</slot>
+ </slots>
 </ui>

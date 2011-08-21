@@ -12,3 +12,8 @@ Menu::~Menu()
 {
     delete ui;
 }
+
+void Menu::on_AboutButton_clicked()
+{
+    emit ChangeRow(3);
+}

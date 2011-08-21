@@ -16,13 +16,14 @@ class MainWindow : public QWidget
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    void SetCurrentRow(int i);
 
 private slots:
+    void SetCurrentRow(int i);
     void on_listWidget_currentRowChanged(int i);
 
 private:
     Ui::MainWindow *ui;
+    bool isMenu;
 };
 
 #endif // MAINWINDOW_H

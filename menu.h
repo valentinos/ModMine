@@ -1,7 +1,7 @@
 #ifndef MENU_H
 #define MENU_H
 
-#include <QWidget>
+#include "mainwindow.h"
 
 namespace Ui {
     class Menu;
@@ -14,6 +14,12 @@ class Menu : public QWidget
 public:
     explicit Menu(QWidget *parent = 0);
     ~Menu();
+
+signals :
+    void ChangeRow(int i);
+
+private slots:
+    void on_AboutButton_clicked();
 
 private:
     Ui::Menu *ui;
