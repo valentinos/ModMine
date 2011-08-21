@@ -21,10 +21,14 @@ public:
     ~Restore();
 
 private slots:
+    void on_SaveButton_clicked();
+    void on_DeleteButton_clicked();
+    void on_RenameButton_clicked();
     void on_RestoreButton_clicked();
 
 private:
     QString SetName();
+    bool CheckSelection();
 
     Ui::Restore *ui;
     QFileSystemModel *model;
