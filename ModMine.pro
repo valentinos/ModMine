@@ -26,7 +26,9 @@ SOURCES += main.cpp \
     quazip/JlCompress.cpp \
     easyfile.cpp \
     about.cpp \
-    restore.cpp
+    restore.cpp \
+    oldinstall.cpp \
+    downloadmanager.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -47,10 +49,13 @@ HEADERS += \
     quazip/crypt.h \
     easyfile.h \
     about.h \
-    restore.h
+    restore.h \
+    oldinstall.h \
+    downloadmanager.h
 
 FORMS += \
     mainwindow.ui \
     menu.ui \
     about.ui \
-    restore.ui
+    restore.ui \
+    oldinstall.ui

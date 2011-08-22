@@ -29,8 +29,8 @@ void MainWindow::SetCurrentRow(int i)
 
 void MainWindow::on_listWidget_currentRowChanged(int i)
 {
-    QWidget *widgetToDestroy = ui->horizontalLayout->itemAt(2)->widget();
-    ui->horizontalLayout->removeItem(ui->horizontalLayout->itemAt(2));
+    QWidget *widgetToDestroy = ui->horizontalLayout->itemAt(1)->widget();
+    ui->horizontalLayout->removeItem(ui->horizontalLayout->itemAt(1));
     if(isMenu)
         QObject::disconnect(widgetToDestroy, SIGNAL(ChangeRow(int)), this, SLOT(SetCurrentRow(int)));
     isMenu=false;
@@ -40,6 +40,9 @@ void MainWindow::on_listWidget_currentRowChanged(int i)
     {
         case 1:
             widgetToAdd = new Restore();
+            break;
+        case 2:
+            widgetToAdd = new OldInstall();
             break;
         case 3:
             widgetToAdd = new About();

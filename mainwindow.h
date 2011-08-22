@@ -5,6 +5,7 @@
 #include "menu.h"
 #include "about.h"
 #include "restore.h"
+#include "oldinstall.h"
 
 namespace Ui {
     class MainWindow;
