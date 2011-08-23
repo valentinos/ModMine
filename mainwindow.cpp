@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MainWindow)
 {
+    blockedMenu = false;
     ui->setupUi(this);
     Menu *menu = new Menu();
     ui->horizontalLayout->addWidget(menu);
@@ -58,7 +59,7 @@ void MainWindow::on_listWidget_currentRowChanged(int i)
             break;
         case 2:
             widgetToAdd = new OldInstall();
-            QObject::connect(widgetToDestroy, SIGNAL(ChangeRow(int)), this, SLOT(SetCurrentRow(int)));
+            QObject::connect(widgetToAdd, SIGNAL(SetBlocked(bool)), this, SLOT(Block(bool)));
             break;
         case 3:
             widgetToAdd = new About();
