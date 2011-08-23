@@ -13,12 +13,12 @@ Menu::~Menu()
     delete ui;
 }
 
-void Menu::on_RestoreButton_clicked()
+void Menu::Click()
 {
-    emit ChangeRow(1);
-}
-
-void Menu::on_AboutButton_clicked()
-{
-    emit ChangeRow(3);
+    QObject * buttonObject = sender();
+    QPushButton * button = qobject_cast<QPushButton*>(buttonObject);
+    if(button)
+    {
+        emit ChangeRow(ui->gridLayout->indexOf(button)+1);
+    }
 }

@@ -21,11 +21,13 @@ public:
 
 private slots:
     void SetCurrentRow(int i);
+    void Block(bool block);
     void on_listWidget_currentRowChanged(int i);
 
 private:
     Ui::MainWindow *ui;
-    bool isMenu;
+    int widgetType;//widgetType is the actual widget row number
+    bool blockedMenu;
 };
 
 #endif // MAINWINDOW_H

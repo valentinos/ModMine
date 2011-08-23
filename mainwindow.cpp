@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     Menu *menu = new Menu();
     ui->horizontalLayout->addWidget(menu);
     QObject::connect(menu, SIGNAL(ChangeRow(int)), this, SLOT(SetCurrentRow(int)));
-    isMenu=true;
+    widgetType = 0;
 }
 
 MainWindow::~MainWindow()
@@ -27,13 +27,28 @@ void MainWindow::SetCurrentRow(int i)
         ui->listWidget->setCurrentRow(i);
 }
 
+void MainWindow::Block(bool block)
+{
+    blockedMenu = block;
+}
+
 void MainWindow::on_listWidget_currentRowChanged(int i)
 {
+    if(blockedMenu)
+        return;
     QWidget *widgetToDestroy = ui->horizontalLayout->itemAt(1)->widget();
     ui->horizontalLayout->removeItem(ui->horizontalLayout->itemAt(1));
-    if(isMenu)
-        QObject::disconnect(widgetToDestroy, SIGNAL(ChangeRow(int)), this, SLOT(SetCurrentRow(int)));
-    isMenu=false;
+    switch(widgetType)
+    {
+        case 0:
+            QObject::disconnect(widgetToDestroy, SIGNAL(ChangeRow(int)), this, SLOT(SetCurrentRow(int)));
+            break;
+        case 2:
+            QObject::disconnect(widgetToDestroy, SIGNAL(SetBlocked(bool)), this, SLOT(Block(bool)));
+            break;
+        default:
+            break;
+    }
     widgetToDestroy->deleteLater(); //I need to destroy this widget because the layout don't
     QWidget *widgetToAdd;
     switch(i)
@@ -43,6 +58,7 @@ void MainWindow::on_listWidget_currentRowChanged(int i)
             break;
         case 2:
             widgetToAdd = new OldInstall();
+            QObject::connect(widgetToDestroy, SIGNAL(ChangeRow(int)), this, SLOT(SetCurrentRow(int)));
             break;
         case 3:
             widgetToAdd = new About();
@@ -50,8 +66,8 @@ void MainWindow::on_listWidget_currentRowChanged(int i)
         default:
             widgetToAdd = new Menu();
             QObject::connect(widgetToAdd, SIGNAL(ChangeRow(int)), this, SLOT(SetCurrentRow(int)));
-            isMenu = true;
             break;
     }
+    widgetType = i;
     ui->horizontalLayout->addWidget(widgetToAdd);
 }

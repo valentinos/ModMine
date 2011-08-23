@@ -28,7 +28,8 @@ SOURCES += main.cpp \
     about.cpp \
     restore.cpp \
     oldinstall.cpp \
-    downloadmanager.cpp
+    downloadmanager.cpp \
+    downloadwidget.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -51,7 +52,8 @@ HEADERS += \
     about.h \
     restore.h \
     oldinstall.h \
-    downloadmanager.h
+    downloadmanager.h \
+    downloadwidget.h
 
 FORMS += \
     mainwindow.ui \

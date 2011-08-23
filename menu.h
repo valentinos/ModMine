@@ -2,6 +2,7 @@
 #define MENU_H
 
 #include "mainwindow.h"
+#include <iostream>
 
 namespace Ui {
     class Menu;
@@ -19,8 +20,7 @@ signals :
     void ChangeRow(int i);
 
 private slots:
-    void on_RestoreButton_clicked();
-    void on_AboutButton_clicked();
+    void Click();
 
 private:
     Ui::Menu *ui;

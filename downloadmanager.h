@@ -10,6 +10,7 @@ public:
     explicit DownloadManager(QWidget *parent = 0);
 
 signals:
+    void SetBlocked(bool block);
 
 private slots:
 

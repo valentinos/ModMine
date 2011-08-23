@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>418</width>
+    <width>421</width>
     <height>80</height>
    </rect>
   </property>
@@ -42,5 +42,57 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>RestoreButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Menu</receiver>
+   <slot>Click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>10</x>
+     <y>36</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>56</x>
+     <y>140</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>OldButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Menu</receiver>
+   <slot>Click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>261</x>
+     <y>28</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>103</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AboutButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Menu</receiver>
+   <slot>Click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>142</x>
+     <y>66</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>179</x>
+     <y>99</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>Click()</slot>
+ </slots>
 </ui>

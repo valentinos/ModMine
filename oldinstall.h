@@ -1,13 +1,13 @@
 #ifndef OLDINSTALL_H
 #define OLDINSTALL_H
 
-#include "downloadmanager.h"
+#include "downloadwidget.h"
 
 namespace Ui {
     class OldInstall;
 }
 
-class OldInstall : public QWidget
+class OldInstall : public DownloadWidget
 {
     Q_OBJECT
 
@@ -17,7 +17,6 @@ public:
 
 private:
     Ui::OldInstall *ui;
-    DownloadManager *downloadManager;
 };
 
 #endif // OLDINSTALL_H
