@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MainWindow)
 {
-    blockedMenu = false;
+    blocked = false;
     ui->setupUi(this);
     Menu *menu = new Menu();
     ui->horizontalLayout->addWidget(menu);
@@ -20,23 +20,29 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::closeEvent(QCloseEvent *event)
+ {
+    if(blocked)
+        event->ignore();
+    else
+        event->accept();
+ }
+
 void MainWindow::SetCurrentRow(int i)
 {
     if(i<0 or i>3)
         ui->listWidget->setCurrentRow(0);
-    else
-        ui->listWidget->setCurrentRow(i);
+    ui->listWidget->setCurrentRow(i);
 }
 
 void MainWindow::Block(bool block)
 {
-    blockedMenu = block;
+    blocked = block;
+    ui->listWidget->setDisabled(block);
 }
 
 void MainWindow::on_listWidget_currentRowChanged(int i)
 {
-    if(blockedMenu)
-        return;
     QWidget *widgetToDestroy = ui->horizontalLayout->itemAt(1)->widget();
     ui->horizontalLayout->removeItem(ui->horizontalLayout->itemAt(1));
     switch(widgetType)

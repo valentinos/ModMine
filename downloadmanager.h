@@ -5,6 +5,7 @@
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkReply>
 #include <QtTest/QTest>
+#include <iostream>
 
 class DownloadManager : public QProgressBar
 {

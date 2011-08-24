@@ -5,6 +5,7 @@
 #include <QTemporaryFile>
 #include <QTextStream>
 #include "downloadwidget.h"
+#include "easyfile.h"
 
 namespace Ui {
     class OldInstall;
@@ -19,6 +20,7 @@ public:
     ~OldInstall();
 
 private slots:
+    void on_InstallButton_clicked();
     void on_RefreshButton_clicked();
 
 private:

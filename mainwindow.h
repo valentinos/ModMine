@@ -20,6 +20,7 @@ public:
     ~MainWindow();
 
 private slots:
+    void closeEvent(QCloseEvent *event);
     void SetCurrentRow(int i);
     void Block(bool block);
     void on_listWidget_currentRowChanged(int i);
@@ -27,7 +28,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     int widgetType;//widgetType is the actual widget row number
-    bool blockedMenu;
+    bool blocked;
 };
 
 #endif // MAINWINDOW_H

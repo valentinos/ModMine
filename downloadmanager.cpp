@@ -11,7 +11,7 @@ void DownloadManager::DisplayDownloadProgress(qint64 receivedBytes, qint64 total
 {
     if(totalBytes>0)
     {
-        setValue(QString().setNum(receivedBytes*100/totalBytes).toInt());
+        setValue(receivedBytes*100/totalBytes);
     }
 }
 
