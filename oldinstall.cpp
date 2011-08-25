@@ -42,7 +42,7 @@ void OldInstall::on_InstallButton_clicked()
     }
     if(minecraftDirectory.exists(".minecraft/bin/minecraft.jar"))
         minecraftDirectory.remove(".minecraft/bin/minecraft.jar");
-    QString downloadUrl = "http://valentinos.byethost17.com/ModMine/MineVersion/";
+    QString downloadUrl = "http://www.valentinos.freehst.com/ModMine/MineVersion/";
     downloadUrl+=version+".jar";
     QNetworkReply *reply=downloadManager->Download(downloadUrl);
     if(reply==NULL)
@@ -73,7 +73,7 @@ void OldInstall::on_RefreshButton_clicked()
 bool OldInstall::UpdateList()
 {
     SetButtonDisabled(true);
-    QNetworkReply *download = downloadManager->Download("http://valentinos.byethost17.com/ModMine/MineVersion/version.txt");
+    QNetworkReply *download = downloadManager->Download("http://www.valentinos.freehst.com/ModMine/MineVersion/version.txt");
     ui->RefreshButton->setEnabled(true);
     if(download==NULL)
         return false;
