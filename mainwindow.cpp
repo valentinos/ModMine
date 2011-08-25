@@ -64,7 +64,9 @@ void MainWindow::on_listWidget_currentRowChanged(int i)
             widgetToAdd = new Restore();
             break;
         case 2:
+            Block(true);
             widgetToAdd = new OldInstall();
+            Block(false);
             QObject::connect(widgetToAdd, SIGNAL(SetBlocked(bool)), this, SLOT(Block(bool)));
             break;
         case 3:

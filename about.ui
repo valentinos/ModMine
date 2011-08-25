@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>590</width>
-    <height>37</height>
+    <width>374</width>
+    <height>105</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,9 @@
         <number>1</number>
        </property>
        <property name="text">
-        <string>Ce programme a été créer par Faure Valentin et mis à disposition sous la licence GPL3</string>
+        <string>Ce programme a été créer par Faure Valentin et mis à disposition sous la licence GPL3.
+
+N'hésitez pas à consulter le Readme pour les remerciements.</string>
        </property>
        <property name="textFormat">
         <enum>Qt::AutoText</enum>
@@ -34,7 +36,7 @@
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
        </property>
        <property name="wordWrap">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
       </widget>
      </item>
